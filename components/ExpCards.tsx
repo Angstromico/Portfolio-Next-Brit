@@ -16,6 +16,8 @@ export default function ExpCard() {
   const { language } = useLanguage()
   const jobPositions = expCardsTranslations[language]
 
+  const CV_PATH = language === 'en' ? '/cvdan.pdf' : '/cvdanes.pdf'
+
   return (
     <section id='experience' className='scroll-mt-16 lg:mt-16'>
       <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
@@ -57,7 +59,7 @@ export default function ExpCard() {
       </>
       <div className='lg:px-12 mt-12'>
         <a
-          href='mailto:manuesteban1990@gmail.com'
+          href={CV_PATH}
           target='_blank'
           rel='noopener noreferrer'
           className='inline-flex items-center font-medium leading-tight text-foreground group'
