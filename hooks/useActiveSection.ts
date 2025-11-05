@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 
 const useActiveSection = (sectionIds: string[]): string => {
-  console.log('useActiveSection called with sectionIds:', sectionIds)
   const [activeSection, setActiveSection] = useState<string>('')
 
   useEffect(() => {
