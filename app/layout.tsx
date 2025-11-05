@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: 'https://angstromico-cv-manuel-morales.netlify.app',
     images: [
       {
-        url: './morales.png',
+        url: '/morales.png',
       },
     ],
   },
