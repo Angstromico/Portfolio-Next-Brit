@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://angstromico-cv-manuel-morales.netlify.app',
   },
-  title: 'Manuel Morales - Product Designer in AI, Web3, and Finance',
+  title: 'Manuel Morales - Full Stack Developer',
   description: 'Manuel Morales is a Web Developer.',
   keywords:
-    'Manuel Morales, Web Developer, AI, Web3, Finance, User Experience, UI/UX Design, Design Systems, Front-end Development, Decentralized Finance, DeFi, DevNavigate, Establishment Labs, Technology, Innovation, Human-Centered Design',
+    'Manuel Morales, Web Developer, AI, User Experience, UI/UX Design, Design Systems, Front-end Development, DevNavigate, Establishment Labs, Technology, Innovation, Human-Centered Design',
   openGraph: {
     locale: 'en_US',
     siteName: 'Manuel Morales',
