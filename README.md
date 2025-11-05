@@ -1,4 +1,4 @@
-# meikopoulos.com
+# manuel-morales.com
 
 A personal website inspired by the design of [Brittany Chiang's website](https://brittanychiang.com). All design credits go to Brittany Chiang. 🌟
 
@@ -28,14 +28,15 @@ This site is not intended as a direct clone of Brittany Chiang's website but rat
 
 ## 🚨 Forking this repo (please read, it's important!) 🚨
 
-I encourage others to learn from and be inspired by the design of this website. However, if you choose to use elements of my code and Brittany's design, **give proper credit to both me and Brittany Chiang** by linking back to both our works. 
+I encourage others to learn from and be inspired by the design of this website. However, if you choose to use elements of my code and Brittany's design, **give proper credit to both me and Brittany Chiang** by linking back to both our works.
 
 Remember, it's essential to respect other people's work! Thanks.
 
 ### TL;DR 📝
+
 - The design of this website is inspired by and credited to Brittany Chiang.
 - The site was independently coded and developed by me by re-creating Brittany's original design.
-- **You can fork this repo but make sure you attribute by linking back to [brittanychiang.com](https://brittanychiang.com) and [meikopoulos.com](https://meikopoulos.com).**
+- **You can fork this repo but make sure you attribute by linking back to [brittanychiang.com](https://brittanychiang.com) and [manuel-morales.com](manuel-morales-brit-portfolio).**
 
 ## Getting Started 🚀
 
@@ -58,6 +59,7 @@ npm run build
 ```bash
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying the appropriate components/sections. The page auto-updates as you edit and save.
