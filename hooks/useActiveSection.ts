@@ -7,7 +7,6 @@ const useActiveSection = (sectionIds: string[]): string => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('IntersectionObserver entry:', entry)
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id)
           }
