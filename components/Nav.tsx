@@ -3,7 +3,10 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Github, Linkedin } from 'lucide-react'
 import { ModeToggle } from './ui/toggle-mode'
+import LanguageDropdown from './ui/toggle-lang'
 import useActiveSection from '@/hooks/useActiveSection'
+import { useLanguage } from '@/context/LanguageContext'
+import { navTranslations } from '@/translations/modeToggle'
 
 type NavItem = {
   name: string
@@ -11,6 +14,9 @@ type NavItem = {
 }
 
 export default function Nav() {
+  const { language } = useLanguage()
+  const t = navTranslations[language]
+
   const activeSection = useActiveSection([
     'about',
     'experience',
@@ -19,10 +25,10 @@ export default function Nav() {
   ])
 
   const navItems: NavItem[] = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: t.about, href: '#about' },
+    { name: t.experience, href: '#experience' },
+    { name: t.projects, href: '#projects' },
+    { name: t.contact, href: '#contact' },
   ]
 
   const getNavItemClasses = (href: string) => {
@@ -58,14 +64,11 @@ export default function Nav() {
           </Avatar>
         </div>
         <h1 className='text-[42px] font-bold lg:text-start'>
-          Hi, I&#39;m Manuel 👋
+          {t.hi}, {t.name}
         </h1>
-        <h2 className='text-xl lg:text-start'>Full Stack Developer</h2>
+        <h2 className='text-xl lg:text-start'>{t.title}</h2>
         <p className='text-lg lg:text-start text-muted-foreground'>
-          As a Full Stack Developer, I spearhead the implementation of
-          innovative web applications. I bring hands-on experience across
-          multiple modern technologies and am adept at configuring various
-          deployment and development environments to ensure project success.
+          {t.description}
         </p>
       </div>
       <nav className='lg:flex hidden'>
@@ -105,6 +108,7 @@ export default function Nav() {
           </a>
         </Button>
         <ModeToggle />
+        <LanguageDropdown />
       </ul>
     </header>
   )

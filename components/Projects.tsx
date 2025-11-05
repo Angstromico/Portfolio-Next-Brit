@@ -9,41 +9,13 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { MoveUpRight } from 'lucide-react'
-
-const jobProjects = [
-  {
-    imagePath: '/Mia.png',
-    title: 'Mia Femtech',
-    description: 'Website created in Nuxt for the company Establishment Lab.',
-    skills: ['Nuxt', 'Drupal', 'Tailwind CSS', 'Docker', 'Laravel'],
-    link: 'https://miafemtech.com',
-  },
-  {
-    imagePath: '/Motiva.png',
-    title: 'Motiva Image',
-    description:
-      'Web App made in Laravel with React for the management of information of surgeons and their clients of the Motiva brand in Costa Rica.',
-    skills: ['SQL', 'React', 'Laravel'],
-    link: 'https://motiva.health/motivaImagine/',
-  },
-  {
-    imagePath: '/Sig.png',
-    title: 'Velzia Sig Admin Page',
-    description:
-      "Web application built in MERN for the management of Velzia Group's business transactions",
-    skills: [
-      'MERN Stack',
-      'Material UI',
-      'Shadcn/ui',
-      'Typescript',
-      'Azure',
-      'Docker',
-    ],
-    link: 'https://swoop.exchange',
-  },
-]
+import { useLanguage } from '@/context/LanguageContext'
+import { projectsTranslations } from '@/translations/modeToggle'
 
 export default function Projects() {
+  const { language } = useLanguage()
+  const jobProjects = projectsTranslations[language]
+
   return (
     <section id='projects' className='scroll-mt-16 lg:mt-16'>
       <div className='sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/0 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
