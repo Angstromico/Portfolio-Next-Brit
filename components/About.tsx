@@ -17,7 +17,9 @@ export default function About() {
 
       <div className='flex flex-col gap-4'>
         <p className='text-start text-muted-foreground lg:px-6'>
-          {t.first} <span className='text-white'>{t.second}</span> {t.third}
+          {t.first}{' '}
+          <span className='text-gray-800 dark:text-white'>{t.second}</span>{' '}
+          {t.third}
         </p>
 
         <p className='text-start text-muted-foreground lg:px-6'>
@@ -30,16 +32,20 @@ export default function About() {
           >
             Mia Femtech.
           </a>
-          {t.fifth} <span className='text-white'>{t.sixth}</span>
+          {t.fifth}{' '}
+          <span className='text-gray-800 dark:text-white'>{t.sixth}</span>
           {t.seventh}
         </p>
 
         <p className='text-start text-muted-foreground lg:px-6'>
-          {t.eighth} <span className='text-white'>{t.ninth}</span>, {t.tenth}
+          {t.eighth}{' '}
+          <span className='text-gray-800 dark:text-white'>{t.ninth}</span>,{' '}
+          {t.tenth}
         </p>
 
         <p className='text-start text-muted-foreground lg:px-6'>
-          {t.eleventh} <span className='text-white'>{t.twelfth}</span>{' '}
+          {t.eleventh}{' '}
+          <span className='text-gray-800 dark:text-white'>{t.twelfth}</span>{' '}
           {t.thirteenth}
         </p>
       </div>
