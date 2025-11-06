@@ -1,4 +1,4 @@
-# manuel-morales.com
+# manuel-morales-brit
 
 A personal website inspired by the design of [Brittany Chiang's website](https://brittanychiang.com). All design credits go to Brittany Chiang. 🌟
 
@@ -36,7 +36,7 @@ Remember, it's essential to respect other people's work! Thanks.
 
 - The design of this website is inspired by and credited to Brittany Chiang.
 - The site was independently coded and developed by me by re-creating Brittany's original design.
-- **You can fork this repo but make sure you attribute by linking back to [brittanychiang.com](https://brittanychiang.com) and [manuel-morales.com](https://manuel-morales-brit-portfolio.netlify.app).**
+- **You can fork this repo but make sure you attribute by linking back to [brittanychiang.com](https://brittanychiang.com) and [See the page](https://manuel-morales-brit-portfolio.netlify.app).**
 
 ## Getting Started 🚀
 
