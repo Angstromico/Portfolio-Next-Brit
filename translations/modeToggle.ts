@@ -110,7 +110,7 @@ export const expCardsTranslations = {
       place: 'DevNavigate',
       previousPositions: [''],
       description:
-        'At DevNavigate, I contributed to full-stack development initiatives for Velzia Group, building and optimizing core business systems. I developed a supplier order generation system for both foreign and domestic vendors, strengthened website security by implementing multi-factor authentication (MFA), and worked extensively on the product receiving logistics module to streamline operational workflows. Additionally, I enhanced overall website performance and responsiveness by optimizing controller logic, refining API calls, and improving front-end code efficiency.',
+        'At DevNavigate, I built full-stack solutions for Velzia Group. Created a supplier order system (domestic & international), added MFA for security, and optimized the product receiving logistics module. Improved site performance via controller logic, API refinement, and front-end efficiency.',
       skills: [
         'MERM Stack',
         'Product Design',
@@ -124,11 +124,8 @@ export const expCardsTranslations = {
       currentPosition: 'Web Developer',
       place: 'Establishment Labs',
       previousPositions: [''],
-      description: `At Establishment Labs, I worked across two major projects: Mia Femtech and Motiva Image, both focused on healthcare innovation and patient experience.
-
-For Mia Femtech, built with Nuxt, Drupal, and AWS, I helped design and implement a multilingual platform centered on minimally invasive breast harmonization — preserving natural tissue, sensitivity, and aesthetics while reducing the need for general anesthesia.
-
-For Motiva Image, developed using React, Laravel, and SQL, I contributed to building a system that allows patients and surgeons to register and manage implant information with long-term reliability and peace of mind. Both projects combined secure architecture, refined UI/UX, and scalable integrations to support a global audience in the medical technology space.`,
+      description:
+        'Contributed to Mia Femtech (Nuxt, Drupal, AWS) — a multilingual platform for minimally invasive breast harmonization — and Motiva Image (React, Laravel, SQL), enabling secure implant tracking for patients and surgeons. Delivered scalable, secure, and user-focused medical tech solutions.',
       skills: ['Vue', 'AWS', 'Full Stack Development', 'Design Strategy'],
     },
     {
@@ -137,7 +134,7 @@ For Motiva Image, developed using React, Laravel, and SQL, I contributed to buil
       place: 'Qanta',
       previousPositions: [''],
       description:
-        'At Qanta, I focused on building modern, responsive web applications using React and Next.js, translating detailed Figma designs into pixel-perfect, high-performance interfaces. Depending on each project’s needs, I worked with Strapi or WordPress on the backend and integrated GraphQL for efficient data communication. I also collaborated closely with designers and backend teams to ensure smooth content management workflows, fast page performance, and consistent design execution across multiple sites.',
+        'Built responsive web apps with React/Next.js from Figma designs. Used Strapi or WordPress backends with GraphQL. Collaborated with design and backend teams to ensure fast, consistent, and high-quality delivery across multiple sites.',
       skills: [
         'Typescript',
         'JavaScript',
@@ -162,7 +159,7 @@ For Motiva Image, developed using React, Laravel, and SQL, I contributed to buil
       place: 'DevNavigate',
       previousPositions: [''],
       description:
-        'En DevNavigate, contribuí a iniciativas de desarrollo full-stack para Velzia Group, construyendo y optimizando sistemas centrales de negocio. Desarrollé un sistema de generación de pedidos a proveedores tanto extranjeros como nacionales, fortalecí la seguridad del sitio web implementando autenticación multifactor (MFA) y trabajé extensamente en el módulo de logística de recepción de productos para agilizar los flujos de trabajo operativos. Además, mejoré el rendimiento general y la capacidad de respuesta del sitio web optimizando la lógica del controlador, refinando las llamadas a la API y mejorando la eficiencia del código front-end.',
+        'En DevNavigate, desarrollé soluciones full-stack para Velzia Group. Implementé un sistema de pedidos a proveedores (nacionales e internacionales), agregué MFA para seguridad y optimicé el módulo de recepción de productos. Mejoré el rendimiento del sitio refinando controladores, APIs y código front-end.',
       skills: [
         'Stack MERM',
         'Diseño de Producto',
@@ -176,11 +173,8 @@ For Motiva Image, developed using React, Laravel, and SQL, I contributed to buil
       currentPosition: 'Desarrollador Web',
       place: 'Establishment Labs',
       previousPositions: [''],
-      description: `En Establishment Labs, trabajé en dos proyectos principales: Mia Femtech y Motiva Image, ambos enfocados en la innovación en la atención médica y la experiencia del paciente.
-
-Para Mia Femtech, construido con Nuxt, Drupal y AWS, ayudé a diseñar e implementar una plataforma multilingüe centrada en la armonización mamaria mínimamente invasiva, preservando el tejido natural, la sensibilidad y la estética, al mismo tiempo que se reducía la necesidad de anestesia general.
-
-Para Motiva Image, desarrollado utilizando React, Laravel y SQL, contribuí a construir un sistema que permite a los pacientes y cirujanos registrar y gestionar la información de los implantes con fiabilidad a largo plazo y tranquilidad. Ambos proyectos combinaron arquitectura segura, UI/UX refinada e integraciones escalables para dar soporte a una audiencia global en el espacio de la tecnología médica.`,
+      description:
+        'Trabajé en Mia Femtech (Nuxt, Drupal, AWS) — plataforma multilingüe para armonización mamaria mínimamente invasiva — y Motiva Image (React, Laravel, SQL), para registro seguro de implantes. Entregué soluciones médicas escalables y centradas en el usuario.',
       skills: ['Vue', 'AWS', 'Desarrollo Full Stack', 'Estrategia de Diseño'],
     },
     {
@@ -189,7 +183,7 @@ Para Motiva Image, desarrollado utilizando React, Laravel y SQL, contribuí a co
       place: 'Qanta',
       previousPositions: [''],
       description:
-        'En Qanta, me centré en la construcción de aplicaciones web modernas y responsivas utilizando React y Next.js, traduciendo diseños detallados de Figma en interfaces de alto rendimiento y píxel-perfectos. Dependiendo de las necesidades de cada proyecto, trabajé con Strapi o WordPress en el backend e integré GraphQL para una comunicación de datos eficiente. También colaboré estrechamente con diseñadores y equipos de backend para asegurar flujos de trabajo de gestión de contenido fluidos, rápido rendimiento de la página y ejecución de diseño consistente en múltiples sitios.',
+        'Construí aplicaciones web responsivas con React/Next.js a partir de diseños en Figma. Usé Strapi o WordPress con GraphQL. Colaboré con equipos de diseño y backend para garantizar rendimiento, consistencia y calidad en múltiples proyectos.',
       skills: [
         'Typescript',
         'JavaScript',
@@ -207,7 +201,7 @@ Para Motiva Image, desarrollado utilizando React, Laravel y SQL, contribuí a co
       ],
     },
   ],
-}
+} //You can reduce the amount of text in the descriptions while maintaining the essence? I feel this part is a bit long.
 
 export const projectsTranslations = {
   en: [
