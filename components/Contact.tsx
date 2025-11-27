@@ -3,6 +3,7 @@
 import { Mail } from 'lucide-react'
 import { Button } from './ui/button'
 import { useLanguage } from '@/context/LanguageContext'
+import FadeIn from './FadeIn'
 
 export default function Contact() {
   const { language } = useLanguage()
@@ -28,31 +29,33 @@ export default function Contact() {
           {t.title}
         </h2>
       </div>
-      <div className='flex flex-col gap-4 lg:px-6 mb-8'>
-        <h2 className='lg:block hidden text-5xl font-bold lg:text-start'>
-          {t.title}
-        </h2>
-        <p className='lg:text-lg lg:text-start text-muted-foreground'>
-          {t.description}
-        </p>
-      </div>
-      <div className='flex flex-row justify-center items-center gap-4 lg:px-6 mb-4'>
-        <a
-          href='mailto:manuesteban1990@gmail.com'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='hover:cursor-pointer w-full'
-        >
-          <Button variant={'default'} className='w-full h-full'>
-            <div className='flex flex-row items-center'>
-              <Mail className='dark:text-white text-muted h-6 w-6' />
-              <p className='ml-3 text-2xl dark:text-white text-muted'>
-                {t.hello}
-              </p>
-            </div>
-          </Button>
-        </a>
-      </div>
+      <FadeIn>
+        <div className='flex flex-col gap-4 lg:px-6 mb-8'>
+          <h2 className='lg:block hidden text-5xl font-bold lg:text-start'>
+            {t.title}
+          </h2>
+          <p className='lg:text-lg lg:text-start text-muted-foreground'>
+            {t.description}
+          </p>
+        </div>
+        <div className='flex flex-row justify-center items-center gap-4 lg:px-6 mb-4'>
+          <a
+            href='mailto:manuesteban1990@gmail.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:cursor-pointer w-full'
+          >
+            <Button variant={'default'} className='w-full h-full'>
+              <div className='flex flex-row items-center'>
+                <Mail className='dark:text-white text-muted h-6 w-6' />
+                <p className='ml-3 text-2xl dark:text-white text-muted'>
+                  {t.hello}
+                </p>
+              </div>
+            </Button>
+          </a>
+        </div>
+      </FadeIn>
     </section>
   )
 }

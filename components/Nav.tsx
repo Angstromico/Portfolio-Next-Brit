@@ -7,6 +7,7 @@ import LanguageDropdown from './ui/toggle-lang'
 import useActiveSection from '@/hooks/useActiveSection'
 import { useLanguage } from '@/context/LanguageContext'
 import { navTranslations } from '@/translations/modeToggle'
+import { motion } from 'framer-motion'
 
 type NavItem = {
   name: string
@@ -48,68 +49,132 @@ export default function Nav() {
     }
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  }
+
   return (
     <header className='lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 flex flex-col lg:gap-4'>
-      <div className='flex flex-col gap-4 lg:pr-24 mt-6 lg:mt-0'>
-        <div className='w-full flex lg:items-center lg:justify-start'>
-          <Avatar className='w-24 lg:w-36 h-auto border-2 border-primary bg-secondary'>
-            <AvatarImage
-              src='./avatar.png'
-              secondarySrc='./alter-avatar.png'
-              alt='Avatar'
-            />
-            <AvatarFallback className='w-24 h-24 lg:w-36 lg:h-36 rounded-full border-1 border-primary'>
-              AM
-            </AvatarFallback>
-          </Avatar>
-        </div>
-        <h1 className='text-[42px] font-bold lg:text-start'>
+      <motion.div
+        initial='hidden'
+        animate='visible'
+        variants={containerVariants}
+        className='flex flex-col gap-4 lg:pr-24 mt-6 lg:mt-0'
+      >
+        <motion.div
+          variants={itemVariants}
+          className='w-full flex lg:items-center lg:justify-start'
+        >
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            <Avatar className='w-24 lg:w-36 h-auto border-2 border-primary bg-secondary'>
+              <AvatarImage
+                src='./avatar.png'
+                secondarySrc='./alter-avatar.png'
+                alt='Avatar'
+              />
+              <AvatarFallback className='w-24 h-24 lg:w-36 lg:h-36 rounded-full border-1 border-primary'>
+                AM
+              </AvatarFallback>
+            </Avatar>
+          </motion.div>
+        </motion.div>
+        <motion.h1
+          variants={itemVariants}
+          className='text-[42px] font-bold lg:text-start'
+        >
           {t.hi}, {t.name}
-        </h1>
-        <h2 className='text-xl lg:text-start'>{t.title}</h2>
-        <p className='text-lg lg:text-start text-muted-foreground'>
+        </motion.h1>
+        <motion.h2 variants={itemVariants} className='text-xl lg:text-start'>
+          {t.title}
+        </motion.h2>
+        <motion.p
+          variants={itemVariants}
+          className='text-lg lg:text-start text-muted-foreground'
+        >
           {t.description}
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
       <nav className='lg:flex hidden'>
-        <ul className='flex flex-col w-max text-start gap-6 uppercase text-xs font-medium'>
+        <motion.ul
+          initial='hidden'
+          animate='visible'
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.5,
+              },
+            },
+          }}
+          className='flex flex-col w-max text-start gap-6 uppercase text-xs font-medium'
+        >
           {navItems.map((item: NavItem) => {
             const { linkClass, indicatorClass, textClass } = getNavItemClasses(
               item.href
             )
             return (
-              <li key={item.name} className='group'>
+              <motion.li
+                variants={itemVariants}
+                key={item.name}
+                className='group'
+              >
                 <a href={item.href} className={`py-3 ${linkClass}`}>
                   <span className={indicatorClass}></span>
                   <span className={textClass}>{item.name}</span>
                 </a>
-              </li>
+              </motion.li>
             )
           })}
-        </ul>
+        </motion.ul>
       </nav>
-      <ul className='flex flex-row gap-6 mt-6 lg:mt-0'>
-        <Button variant='outline' size='icon'>
-          <a
+      <motion.ul
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className='flex flex-row gap-6 mt-6 lg:mt-0'
+      >
+        <Button variant='outline' size='icon' asChild>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             href='https://github.com/Angstromico'
             target='_blank'
             rel='noopener noreferrer'
           >
             <Github className='h-[1.2rem] w-[1.2rem]' />
-          </a>
+          </motion.a>
         </Button>
-        <Button variant='outline' size='icon'>
-          <a
+        <Button variant='outline' size='icon' asChild>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             href='https://www.linkedin.com/in/manuel-esteban-morales-zuarez-68573b189/'
             target='_blank'
             rel='noopener noreferrer'
           >
             <Linkedin className='h-[1.2rem] w-[1.2rem]' />
-          </a>
+          </motion.a>
         </Button>
         <ModeToggle />
         <LanguageDropdown />
-      </ul>
+      </motion.ul>
     </header>
   )
 }

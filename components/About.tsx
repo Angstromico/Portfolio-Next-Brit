@@ -2,6 +2,7 @@
 /* eslint-disable */
 import { useLanguage } from '@/context/LanguageContext'
 import { aboutTranslations } from '@/translations/modeToggle'
+import FadeIn from './FadeIn'
 
 export default function About() {
   const { language } = useLanguage()
@@ -15,7 +16,7 @@ export default function About() {
         </h2>
       </div>
 
-      <div className='flex flex-col gap-4'>
+      <FadeIn className='flex flex-col gap-4'>
         <p className='text-start text-muted-foreground lg:px-6'>
           {t.first}{' '}
           <span className='text-gray-800 dark:text-white'>{t.second}</span>{' '}
@@ -48,7 +49,7 @@ export default function About() {
           <span className='text-gray-800 dark:text-white'>{t.twelfth}</span>{' '}
           {t.thirteenth}
         </p>
-      </div>
+      </FadeIn>
     </section>
   )
 }
