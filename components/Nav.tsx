@@ -8,6 +8,7 @@ import useActiveSection from '@/hooks/useActiveSection'
 import { useLanguage } from '@/context/LanguageContext'
 import { navTranslations } from '@/translations/modeToggle'
 import { motion } from 'framer-motion'
+import MagneticElement from './MagneticElement'
 
 type NavItem = {
   name: string
@@ -135,10 +136,12 @@ export default function Nav() {
                 key={item.name}
                 className='group'
               >
-                <a href={item.href} className={`py-3 ${linkClass}`}>
-                  <span className={indicatorClass}></span>
-                  <span className={textClass}>{item.name}</span>
-                </a>
+                <MagneticElement strength={0.2}>
+                  <a href={item.href} className={`py-3 ${linkClass}`}>
+                    <span className={indicatorClass}></span>
+                    <span className={textClass}>{item.name}</span>
+                  </a>
+                </MagneticElement>
               </motion.li>
             )
           })}
@@ -150,28 +153,32 @@ export default function Nav() {
         transition={{ delay: 0.8 }}
         className='flex flex-row gap-6 mt-6 lg:mt-0'
       >
-        <Button variant='outline' size='icon' asChild>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href='https://github.com/Angstromico'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Github className='h-[1.2rem] w-[1.2rem]' />
-          </motion.a>
-        </Button>
-        <Button variant='outline' size='icon' asChild>
-          <motion.a
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            href='https://www.linkedin.com/in/manuel-esteban-morales-zuarez-68573b189/'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <Linkedin className='h-[1.2rem] w-[1.2rem]' />
-          </motion.a>
-        </Button>
+        <MagneticElement strength={0.25}>
+          <Button variant='outline' size='icon' asChild>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href='https://github.com/Angstromico'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Github className='h-[1.2rem] w-[1.2rem]' />
+            </motion.a>
+          </Button>
+        </MagneticElement>
+        <MagneticElement strength={0.25}>
+          <Button variant='outline' size='icon' asChild>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href='https://www.linkedin.com/in/manuel-esteban-morales-zuarez-68573b189/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Linkedin className='h-[1.2rem] w-[1.2rem]' />
+            </motion.a>
+          </Button>
+        </MagneticElement>
         <ModeToggle />
         <LanguageDropdown />
       </motion.ul>

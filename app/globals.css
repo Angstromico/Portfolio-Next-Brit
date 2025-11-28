@@ -113,3 +113,101 @@
 .dark .group .nav-indicator.active {
   background-color: #e2e8f0;
 }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animated gradient backgrounds */
+@keyframes gradient-1 {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-2 {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-3 {
+  0%,
+  100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+}
+
+.bg-gradient-animated-1 {
+  background: linear-gradient(
+    -45deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(147, 51, 234, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-1 15s ease infinite;
+}
+
+.bg-gradient-animated-2 {
+  background: linear-gradient(
+    45deg,
+    rgba(16, 185, 129, 0.1),
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-2 20s ease infinite;
+  animation-delay: 2s;
+}
+
+.bg-gradient-animated-3 {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0.1),
+    rgba(239, 68, 68, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-3 25s ease infinite;
+  animation-delay: 4s;
+}
+
+/* Glow effect for active states */
+.glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
