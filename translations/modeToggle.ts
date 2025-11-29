@@ -301,3 +301,22 @@ export const footerTranslations = {
     link_deploy: 'Vercel',
   },
 }
+
+export const whatsAppTranslations = {
+  en: {
+    name: 'Manuel Morales',
+    status: 'Typically replies instantly',
+    greeting: 'Hi there! 👋 How can I help you today?',
+    placeholder: 'Type your message...',
+    send: 'Send Message',
+    chatOnWhatsApp: 'Chat on WhatsApp',
+  },
+  es: {
+    name: 'Manuel Morales',
+    status: 'Suele responder al instante',
+    greeting: '¡Hola! 👋 ¿En qué puedo ayudarte hoy?',
+    placeholder: 'Escribe tu mensaje...',
+    send: 'Enviar Mensaje',
+    chatOnWhatsApp: 'Chatear en WhatsApp',
+  },
+}

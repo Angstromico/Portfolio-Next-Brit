@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useLanguage } from '@/context/LanguageContext'
+import { whatsAppTranslations } from '@/translations/modeToggle'
 
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')
   const [isMounted, setIsMounted] = useState(false)
+  const { language } = useLanguage()
+  const t = whatsAppTranslations[language]
 
   useEffect(() => {
     setIsMounted(true)
@@ -39,7 +43,7 @@ export default function WhatsAppButton() {
             <Button
               onClick={() => setIsOpen(true)}
               className='h-14 w-14 rounded-full bg-[#25D366] hover:bg-[#128C7E] shadow-lg hover:shadow-xl transition-all duration-300 p-0 flex items-center justify-center'
-              aria-label='Chat on WhatsApp'
+              aria-label={t.chatOnWhatsApp}
             >
               <svg
                 viewBox='0 0 24 24'
@@ -82,12 +86,8 @@ export default function WhatsAppButton() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className='text-white font-bold text-sm'>
-                      Manuel Morales
-                    </h3>
-                    <p className='text-white/80 text-xs'>
-                      Typically replies instantly
-                    </p>
+                    <h3 className='text-white font-bold text-sm'>{t.name}</h3>
+                    <p className='text-white/80 text-xs'>{t.status}</p>
                   </div>
                 </div>
                 <Button
@@ -102,9 +102,7 @@ export default function WhatsAppButton() {
 
               <div className="p-4 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-opacity-10">
                 <div className='bg-background rounded-lg p-2 shadow-sm mb-4 max-w-[85%]'>
-                  <p className='text-sm'>
-                    Hi there! 👋 How can I help you today?
-                  </p>
+                  <p className='text-sm'>{t.greeting}</p>
                   <span className='text-[10px] text-muted-foreground block text-right mt-1'>
                     {new Date().toLocaleTimeString([], {
                       hour: '2-digit',
@@ -116,7 +114,7 @@ export default function WhatsAppButton() {
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder='Type your message...'
+                  placeholder={t.placeholder}
                   className='w-full min-h-[100px] p-3 rounded-lg border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[#25D366] resize-none'
                   autoFocus
                 />
@@ -127,7 +125,7 @@ export default function WhatsAppButton() {
                   className='w-full mt-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-2 rounded-lg transition-colors flex items-center justify-center gap-2'
                 >
                   <Send className='h-4 w-4' />
-                  Send Message
+                  {t.send}
                 </Button>
               </div>
             </motion.div>
