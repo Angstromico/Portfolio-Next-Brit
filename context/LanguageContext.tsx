@@ -1,6 +1,12 @@
 'use client'
 
-import React, { createContext, useContext, useState, ReactNode } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from 'react'
 
 type Language = 'en' | 'es'
 
@@ -15,6 +21,13 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('en')
+
+  useEffect(() => {
+    const browserLang = navigator.language
+    if (browserLang.startsWith('es')) {
+      setLanguage('es')
+    }
+  }, [])
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
