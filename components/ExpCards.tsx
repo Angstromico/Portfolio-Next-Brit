@@ -19,7 +19,10 @@ export default function ExpCard() {
   const { language } = useLanguage()
   const jobPositions = expCardsTranslations[language]
 
-  const CV_PATH = language === 'en' ? '/cvdan.pdf' : '/cvdanes.pdf'
+  const CV_PATH =
+    language === 'en'
+      ? '/manuel-morales-harvard.pdf'
+      : '/manuel-morales-harvard-es.pdf'
 
   const containerVariants = {
     hidden: { opacity: 0 },
