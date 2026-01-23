@@ -22,7 +22,10 @@ Unlock hidden features by entering the Konami Code (`↑ ↑ ↓ ↓ ← → ←
 
 - **Retro Aesthetic**: CRT scanlines, pixel fonts, and glitch effects.
 - **Interactive Terminal**: Access a hidden terminal simulator via the `>_` icon to explore the virtual file system.
-  - Commands: `ls`, `cd`, `cat`, `help`, `whoami`, `clear`
+  - Commands: `ls`, `cd`, `cat`, `help`, `whoami`, `clear`, `play`
+  - **Mini Game**: Type `play` to launch Space Invaders directly in the terminal!
+    - **Controls**: Arrow Keys (Move), Space (Shoot), ESC/X (Exit).
+    - **Mobile**: Touch controls enabled.
 - **Audio Experience**: 8-bit sound effects for a truly immersive experience.
 
 ## Design Credits 🎨

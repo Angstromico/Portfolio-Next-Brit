@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import { initialFileSystem, FileSystemItem } from './VirtualFileSystem'
 import { useGamer } from '@/context/GamerContext'
 import { X, Minus, Square } from 'lucide-react'
+import { SpaceInvaders } from './SpaceInvaders'
 
 type HistoryItem = {
   command: string
@@ -23,6 +24,8 @@ export const Terminal = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const { toggleTerminal, toggleTerminalMinimize, toggleTerminalMaximize } =
     useGamer()
+
+  const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
     // Intro message
@@ -64,8 +67,16 @@ export const Terminal = () => {
     switch (command) {
       case 'help':
         output =
-          'Available commands: ls, cd, cat, clear, pwd, whoami, exit, help'
+          'Available commands: ls, cd, cat, clear, pwd, whoami, exit, help, play'
         break
+      case 'play':
+        setIsPlaying(true)
+        setHistory((prev) => [
+          ...prev,
+          { command: trimmedCmd, output: 'Starting Space Invaders...' },
+        ])
+        setInput('')
+        return
       case 'ls':
         const dir = getCurrentDir()
         if (dir.type === 'dir' && dir.children) {
@@ -188,46 +199,50 @@ export const Terminal = () => {
         </div>
       </div>
 
-      <div
-        className='flex-1 overflow-y-auto p-2 scrollbar-hide'
-        onClick={() => inputRef.current?.focus()}
-      >
-        {history.map((item, i) => (
-          <div key={i} className='mb-2'>
-            {item.command && (
-              <div className='flex gap-2'>
-                <span className='text-blue-400'>➜</span>
-                <span className='text-pink-400'>
-                  ~{currentPath.length > 0 ? '/' + currentPath.join('/') : ''}
-                </span>
-                <span>{item.command}</span>
-              </div>
-            )}
-            <div
-              className='whitespace-pre-wrap ml-4 opacity-80'
-              dangerouslySetInnerHTML={{ __html: item.output }}
+      {isPlaying ? (
+        <SpaceInvaders onExit={() => setIsPlaying(false)} />
+      ) : (
+        <div
+          className='flex-1 overflow-y-auto p-2 scrollbar-hide'
+          onClick={() => inputRef.current?.focus()}
+        >
+          {history.map((item, i) => (
+            <div key={i} className='mb-2'>
+              {item.command && (
+                <div className='flex gap-2'>
+                  <span className='text-blue-400'>➜</span>
+                  <span className='text-pink-400'>
+                    ~{currentPath.length > 0 ? '/' + currentPath.join('/') : ''}
+                  </span>
+                  <span>{item.command}</span>
+                </div>
+              )}
+              <div
+                className='whitespace-pre-wrap ml-4 opacity-80'
+                dangerouslySetInnerHTML={{ __html: item.output }}
+              />
+            </div>
+          ))}
+
+          <div className='flex gap-2'>
+            <span className='text-blue-400'>➜</span>
+            <span className='text-pink-400'>
+              ~{currentPath.length > 0 ? '/' + currentPath.join('/') : ''}
+            </span>
+            <input
+              ref={inputRef}
+              type='text'
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className='flex-1 bg-transparent outline-none border-none text-green-500 font-inherit caret-green-500'
+              autoFocus
+              autoComplete='off'
             />
           </div>
-        ))}
-
-        <div className='flex gap-2'>
-          <span className='text-blue-400'>➜</span>
-          <span className='text-pink-400'>
-            ~{currentPath.length > 0 ? '/' + currentPath.join('/') : ''}
-          </span>
-          <input
-            ref={inputRef}
-            type='text'
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            className='flex-1 bg-transparent outline-none border-none text-green-500 font-inherit caret-green-500'
-            autoFocus
-            autoComplete='off'
-          />
+          <div ref={bottomRef} />
         </div>
-        <div ref={bottomRef} />
-      </div>
+      )}
     </div>
   )
 }
