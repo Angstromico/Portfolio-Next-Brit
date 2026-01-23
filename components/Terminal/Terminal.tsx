@@ -21,7 +21,8 @@ export const Terminal = () => {
 
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
-  const { toggleTerminal } = useGamer()
+  const { toggleTerminal, toggleTerminalMinimize, toggleTerminalMaximize } =
+    useGamer()
 
   useEffect(() => {
     // Intro message
@@ -169,8 +170,16 @@ export const Terminal = () => {
       <div className='flex items-center justify-between bg-green-900/20 px-2 py-1 mb-2 border-b border-green-800'>
         <span>root@memz-portfolio:~</span>
         <div className='flex gap-2'>
-          <Minus size={14} className='hover:text-white cursor-pointer' />
-          <Square size={12} className='hover:text-white cursor-pointer' />
+          <Minus
+            size={14}
+            className='hover:text-white cursor-pointer'
+            onClick={toggleTerminalMinimize}
+          />
+          <Square
+            size={12}
+            className='hover:text-white cursor-pointer'
+            onClick={toggleTerminalMaximize}
+          />
           <X
             size={14}
             className='hover:text-red-500 cursor-pointer'

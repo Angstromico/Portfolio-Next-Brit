@@ -13,6 +13,10 @@ type GamerContextType = {
   toggleGamerMode: () => void
   isTerminalOpen: boolean
   toggleTerminal: () => void
+  isTerminalMaximized: boolean
+  toggleTerminalMaximize: () => void
+  isTerminalMinimized: boolean
+  toggleTerminalMinimize: () => void
   playHoverSound: () => void
   playClickSound: () => void
   playSuccessSound: () => void
@@ -47,8 +51,24 @@ export const GamerProvider = ({ children }: { children: ReactNode }) => {
   const toggleTerminal = () => {
     if (isGamerMode) {
       setIsTerminalOpen((prev) => !prev)
+      setIsTerminalMinimized(false) // Reset on toggle
       playClickSound()
     }
+  }
+
+  const [isTerminalMaximized, setIsTerminalMaximized] = useState(false)
+  const [isTerminalMinimized, setIsTerminalMinimized] = useState(false)
+
+  const toggleTerminalMaximize = () => {
+    setIsTerminalMaximized((prev) => !prev)
+    setIsTerminalMinimized(false) // Cannot be both
+    playClickSound()
+  }
+
+  const toggleTerminalMinimize = () => {
+    setIsTerminalMinimized((prev) => !prev)
+    setIsTerminalMaximized(false) // Cannot be both
+    playClickSound()
   }
 
   const playOscillator = (
@@ -104,6 +124,10 @@ export const GamerProvider = ({ children }: { children: ReactNode }) => {
         toggleGamerMode,
         isTerminalOpen,
         toggleTerminal,
+        isTerminalMaximized,
+        toggleTerminalMaximize,
+        isTerminalMinimized,
+        toggleTerminalMinimize,
         playHoverSound,
         playClickSound,
         playSuccessSound,
