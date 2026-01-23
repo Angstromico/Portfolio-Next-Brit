@@ -211,3 +211,24 @@ html {
 .pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* GAMER MODE STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.font-press-start {
+  font-family: 'Press Start 2P', cursive;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}

@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ui/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
+import { GamerProvider } from '@/context/GamerContext'
+import Scanlines from '@/components/Scanlines'
 import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -49,7 +51,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>{children}</LanguageProvider>
+          <LanguageProvider>
+            <GamerProvider>
+              <Scanlines />
+              {children}
+            </GamerProvider>
+          </LanguageProvider>
           <Analytics />
         </ThemeProvider>
       </body>

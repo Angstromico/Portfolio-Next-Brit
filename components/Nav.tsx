@@ -9,6 +9,8 @@ import { useLanguage } from '@/context/LanguageContext'
 import { navTranslations } from '@/translations/modeToggle'
 import { motion } from 'framer-motion'
 import MagneticElement from './MagneticElement'
+import GamerModeToggle from './GamerModeToggle'
+import GlitchText from './GlitchText'
 
 type NavItem = {
   name: string
@@ -98,10 +100,10 @@ export default function Nav() {
           variants={itemVariants}
           className='text-[42px] font-bold lg:text-start'
         >
-          {t.hi}, {t.name}
+          {t.hi}, <GlitchText>{t.name}</GlitchText>
         </motion.h1>
         <motion.h2 variants={itemVariants} className='text-xl lg:text-start'>
-          {t.title}
+          <GlitchText>{t.title}</GlitchText>
         </motion.h2>
         <motion.p
           variants={itemVariants}
@@ -128,7 +130,7 @@ export default function Nav() {
         >
           {navItems.map((item: NavItem) => {
             const { linkClass, indicatorClass, textClass } = getNavItemClasses(
-              item.href
+              item.href,
             )
             return (
               <motion.li
@@ -181,6 +183,7 @@ export default function Nav() {
         </MagneticElement>
         <ModeToggle />
         <LanguageDropdown />
+        <GamerModeToggle />
       </motion.ul>
     </header>
   )
