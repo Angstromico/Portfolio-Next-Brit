@@ -14,6 +14,17 @@ This website was recreated from scratch by closely studying the design elements 
 - **IDE**: Coded in Visual Studio Code.
 - **Deployment**: Hosted and deployed with Vercel.
 
+## Gamer Mode 🎮
+
+Unlock hidden features by entering the Konami Code (`↑ ↑ ↓ ↓ ← → ← → B A`) or clicking the gamepad icon in the navigation bar!
+
+### Features
+
+- **Retro Aesthetic**: CRT scanlines, pixel fonts, and glitch effects.
+- **Interactive Terminal**: Access a hidden terminal simulator via the `>_` icon to explore the virtual file system.
+  - Commands: `ls`, `cd`, `cat`, `help`, `whoami`, `clear`
+- **Audio Experience**: 8-bit sound effects for a truly immersive experience.
+
 ## Design Credits 🎨
 
 The design of this site is based on the 5th iteration of Brittany Chiang's portfolio. I have recreated the design for my training and personal use while ensuring to give full credit to Brittany for their original and inspiring work.
