@@ -11,6 +11,8 @@ import React, {
 type GamerContextType = {
   isGamerMode: boolean
   toggleGamerMode: () => void
+  isTerminalOpen: boolean
+  toggleTerminal: () => void
   playHoverSound: () => void
   playClickSound: () => void
   playSuccessSound: () => void
@@ -20,6 +22,7 @@ const GamerContext = createContext<GamerContextType | undefined>(undefined)
 
 export const GamerProvider = ({ children }: { children: ReactNode }) => {
   const [isGamerMode, setIsGamerMode] = useState(false)
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false) // Start closed
   const [audioCtx, setAudioCtx] = useState<AudioContext | null>(null)
 
   useEffect(() => {
@@ -36,6 +39,15 @@ export const GamerProvider = ({ children }: { children: ReactNode }) => {
     setIsGamerMode((prev) => !prev)
     if (!isGamerMode) {
       playSuccessSound()
+    } else {
+      setIsTerminalOpen(false) // Close terminal if gamer mode is disabled
+    }
+  }
+
+  const toggleTerminal = () => {
+    if (isGamerMode) {
+      setIsTerminalOpen((prev) => !prev)
+      playClickSound()
     }
   }
 
@@ -90,6 +102,8 @@ export const GamerProvider = ({ children }: { children: ReactNode }) => {
       value={{
         isGamerMode,
         toggleGamerMode,
+        isTerminalOpen,
+        toggleTerminal,
         playHoverSound,
         playClickSound,
         playSuccessSound,

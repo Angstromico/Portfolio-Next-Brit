@@ -1,11 +1,12 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Github, Linkedin } from 'lucide-react'
+import { Github, Linkedin, TerminalSquare } from 'lucide-react'
 import { ModeToggle } from './ui/toggle-mode'
 import LanguageDropdown from './ui/toggle-lang'
 import useActiveSection from '@/hooks/useActiveSection'
 import { useLanguage } from '@/context/LanguageContext'
+import { useGamer } from '@/context/GamerContext'
 import { navTranslations } from '@/translations/modeToggle'
 import { motion } from 'framer-motion'
 import MagneticElement from './MagneticElement'
@@ -19,6 +20,7 @@ type NavItem = {
 
 export default function Nav() {
   const { language } = useLanguage()
+  const { isGamerMode, toggleTerminal } = useGamer()
   const t = navTranslations[language]
 
   const activeSection = useActiveSection([
@@ -184,6 +186,18 @@ export default function Nav() {
         <ModeToggle />
         <LanguageDropdown />
         <GamerModeToggle />
+        {isGamerMode && (
+          <MagneticElement strength={0.25}>
+            <Button variant='outline' size='icon' onClick={toggleTerminal}>
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 10 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <TerminalSquare className='h-[1.2rem] w-[1.2rem]' />
+              </motion.div>
+            </Button>
+          </MagneticElement>
+        )}
       </motion.ul>
     </header>
   )

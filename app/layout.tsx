@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/ui/theme-provider'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { GamerProvider } from '@/context/GamerContext'
 import Scanlines from '@/components/Scanlines'
+import TerminalModal from '@/components/Terminal/TerminalModal'
 import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -54,6 +55,7 @@ export default function RootLayout({
           <LanguageProvider>
             <GamerProvider>
               <Scanlines />
+              <TerminalModal />
               {children}
             </GamerProvider>
           </LanguageProvider>
