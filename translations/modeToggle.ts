@@ -233,7 +233,7 @@ export const projectsTranslations = {
         'Azure',
         'Docker',
       ],
-      link: 'https://swoop.exchange',
+      link: 'https://velzia.com',
     },
   ],
   es: [
