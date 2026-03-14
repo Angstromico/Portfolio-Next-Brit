@@ -233,7 +233,7 @@ export const projectsTranslations = {
         'Azure',
         'Docker',
       ],
-      link: 'https://velzia.com',
+      link: 'https://sig.velzia.es',
     },
   ],
   es: [
