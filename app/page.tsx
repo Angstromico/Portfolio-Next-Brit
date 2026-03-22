@@ -10,6 +10,7 @@ import ScrollProgress from '@/components/ScrollProgress'
 import AnimatedBackground from '@/components/AnimatedBackground'
 import FloatingActionButton from '@/components/FloatingActionButton'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import ChatBotButton from '@/components/ChatBotButton'
 import { useEffect, useRef } from 'react'
 import { Inter } from 'next/font/google'
 
@@ -58,6 +59,7 @@ export default function Home() {
       </div>
       <FloatingActionButton />
       <WhatsAppButton />
+      <ChatBotButton />
     </>
   )
 }

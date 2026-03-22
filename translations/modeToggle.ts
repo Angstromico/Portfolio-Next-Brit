@@ -320,3 +320,22 @@ export const whatsAppTranslations = {
     chatOnWhatsApp: 'Chatear en WhatsApp',
   },
 }
+
+export const chatBotTranslations = {
+  en: {
+    tooltip: 'Talk to my automated chat',
+    greeting: 'Hi! I am the automated assistant. You can ask me questions about Manuel.',
+    placeholder: 'Ask me about his experience, projects...',
+    send: 'Send',
+    name: 'AI Assistant',
+    status: 'Powered by OpenAI',
+  },
+  es: {
+    tooltip: 'Habla con mi chat automatizado',
+    greeting: '¡Hola! Soy el asistente automatizado. Puedes hacerme preguntas sobre Manuel.',
+    placeholder: 'Pregúntame sobre su experiencia, proyectos...',
+    send: 'Enviar',
+    name: 'Asistente IA',
+    status: 'Impulsado por OpenAI',
+  },
+}
